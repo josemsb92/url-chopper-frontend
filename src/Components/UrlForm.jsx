@@ -11,6 +11,9 @@ function UrlForm() {
   function handleChange(event) {
     setUrlText(event.target.value);
   }
+  function copyToClipboard(){
+    navigator.clipboard.writeText(shortUrl)
+  }
 
   async function UrlTransform(event) {
     const response = await axios
@@ -18,10 +21,17 @@ function UrlForm() {
         OriginalUrl: urltext,
       })
       .then(
-        (res) => setShortUrl(res.data.url.GeneratedUrl),
+        (res) => setShortUrl(`urlchopper/${res.data.url.GeneratedUrl}`),
         (res) => console.log(res)
       );
   }
+
+  const shortUrlRender =
+    shortUrl !== "" ? (
+      <div className="display-short-url">
+        Your url has been chopped: <input type="button" value={shortUrl} onClick={copyToClipboard()}/>
+      </div>
+    ) : null;
 
   return (
     <>
@@ -34,9 +44,7 @@ function UrlForm() {
         />
         <input type="submit" value="Chopp!" onClick={UrlTransform} />
       </form>
-      <div className="display-short-url">
-        Your url has been chopped: <input type="text" value = {shortUrl}/>
-      </div>
+      {shortUrlRender}
     </>
   );
 }
