@@ -6,7 +6,7 @@ function ExternalUrl() {
 
   useEffect(() =>{
     const OriginalUrl = async () => {
-       await axios.get(`localhost:3003/urlchopper/url/nH1Mt5`).then((response) => console.log(response))
+       await axios.get(`localhost:3003/urlchopper/url/${shortUrl}`).then((response) => console.log(response))
     }
     OriginalUrl()
 
