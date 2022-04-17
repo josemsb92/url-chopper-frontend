@@ -1,9 +1,8 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
 function ExternalUrl() {
-  const [urlRedirect, setUrlRedirect] = useState("") //Necesito hacer un getUrl con req.param y cortar por el codigo para obtener el link
+  const [urlRedirect, setUrlRedirect] = useState("")
   
-
   useEffect(() =>{
     const shortUrl = window.location.href.split("/urlchopper/")
     const OriginalUrl = async () => {
@@ -14,12 +13,11 @@ function ExternalUrl() {
     OriginalUrl()
 
   },[])
-  
+
+  const pageRender = urlRedirect!== "" ? (window.location.href = urlRedirect) : "Rendering"
   return (
-    <div className="test-view">
-      {console.log(urlRedirect)}
-      
-      {urlRedirect!== "" ? window.location.href = urlRedirect : ""}
+    <div className="external-url-view">      
+      {pageRender}
     </div>
   );
 }
