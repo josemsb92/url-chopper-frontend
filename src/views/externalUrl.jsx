@@ -1,5 +1,7 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
+import CircularProgress from '@mui/material/CircularProgress';
+
 function ExternalUrl() {
   const [urlRedirect, setUrlRedirect] = useState("")
   
@@ -13,8 +15,8 @@ function ExternalUrl() {
     OriginalUrl()
 
   },[])
-
-  const pageRender = urlRedirect!== "" ? (window.location.href = urlRedirect) : "Rendering"
+  const pageRender = urlRedirect === ""? <div className="main-spinner"><CircularProgress /> </div>: ""
+  urlRedirect!== "" && (window.location.href = urlRedirect)
   return (
     <div className="external-url-view">      
       {pageRender}
