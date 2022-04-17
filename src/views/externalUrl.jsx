@@ -7,16 +7,19 @@ function ExternalUrl() {
   useEffect(() =>{
     const shortUrl = window.location.href.split("/urlchopper/")
     const OriginalUrl = async () => {
-       await axios.get(`localhost:3003/urlchopper/url/${shortUrl[shortUrl.length - 1]}`).then((response) => console.log(response))
+       await axios.get(`http://localhost:3003/urlchopper/url/${shortUrl[shortUrl.length-1]}`).then((response) => {
+         setUrlRedirect(response.data)
+        })
     }
     OriginalUrl()
-
 
   },[])
   
   return (
     <div className="test-view">
-      {/* {(window.location.href = urlRedirect)} */}
+      {console.log(urlRedirect)}
+      
+      {urlRedirect!== "" ? window.location.href = urlRedirect : ""}
     </div>
   );
 }

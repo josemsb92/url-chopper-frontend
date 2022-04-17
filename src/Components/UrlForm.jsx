@@ -21,7 +21,7 @@ function UrlForm() {
         OriginalUrl: urltext,
       })
       .then(
-        (res) => setShortUrl(`urlchopper/${res.data.url.GeneratedUrl}`),
+        (res) => setShortUrl(`localhost:3000/urlchopper/${res.data.url.GeneratedUrl}`),
         (res) => console.log(res)
       );
   }
