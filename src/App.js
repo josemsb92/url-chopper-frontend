@@ -1,4 +1,4 @@
-import "./App.css";
+import "./assets/styles.scss";
 import MainView from "./views/index"
 import ExternalUrl from "./views/externalUrl"
 import { BrowserRouter, Routes, Route } from "react-router-dom";

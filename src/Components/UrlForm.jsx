@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 function UrlForm() {
   const [urltext, setUrlText] = useState("");
@@ -29,7 +30,7 @@ function UrlForm() {
   const shortUrlRender =
     shortUrl !== "" ? (
       <div className="display-short-url">
-        Your url has been chopped: <input type="button" value={shortUrl} onClick={copyToClipboard()}/>
+        Your url has been chopped: <button className="clipboard-button" onClick={copyToClipboard()}>{shortUrl}<ContentCopyIcon/></button>
       </div>
     ) : null;
 
