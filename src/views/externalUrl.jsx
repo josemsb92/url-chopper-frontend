@@ -9,7 +9,8 @@ function ExternalUrl() {
     const shortUrl = window.location.href.split("/urlchopper/")
     const OriginalUrl = async () => {
        await axios.get(`http://localhost:3003/urlchopper/url/${shortUrl[shortUrl.length-1]}`).then((response) => {
-         setUrlRedirect(response.data)
+         const data = [...response.data]
+        setUrlRedirect(data[0].OriginalUrl)
         })
     }
     OriginalUrl()
