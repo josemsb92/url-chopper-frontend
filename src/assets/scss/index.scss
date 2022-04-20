@@ -1,3 +1,9 @@
+$border-form: 2px solid #000000;
+
 body{
-    background-color: aqua;
+    
+}
+
+.login-portal{
+    border: $border-form
 }
