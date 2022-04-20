@@ -28,11 +28,13 @@ function UrlForm() {
   }
 
   const shortUrlRender =
-    shortUrl !== "" ? (
+      shortUrl === "localhost:3000/urlchopper/undefined"? (
       <div className="display-short-url">
-        Your url has been chopped: <button className="clipboard-button" onClick={copyToClipboard()}>{shortUrl}<ContentCopyIcon/></button>
+        Your url is not a valid url
       </div>
-    ) : null;
+    ) : shortUrl !== ""? <div className="display-short-url">
+    Your url has been chopped: <button className="clipboard-button" onClick={copyToClipboard()}>{shortUrl}<ContentCopyIcon/></button>
+  </div>: null
 
   return (
     <>
