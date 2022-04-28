@@ -5,14 +5,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+     
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainView/>} />
-            <Route path="/urlchopper/:shortUrl" element={<ExternalUrl/>}/>
+            <Route path="/urlchopper/:generatedUrl" element={<ExternalUrl/>}/>
           </Routes>
         </BrowserRouter>
-      </header>
+  
     </div>
   );
 }

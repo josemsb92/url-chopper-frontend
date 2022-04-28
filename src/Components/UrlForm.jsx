@@ -37,18 +37,19 @@ function UrlForm() {
   </div>: null
 
   return (
-    <>
-      <form className="Url-form" onSubmit={handleSubmit}>
+    <div className="url-form-body">
+      <form className="url-form" onSubmit={handleSubmit}>
         <input
           type="text"
           value={urltext}
-          className="Url-text-area"
+          className="url-text-area"
           onChange={handleChange}
         />
         <input type="submit" value="Chopp!" onClick={UrlTransform} />
       </form>
       {shortUrlRender}
-    </>
+      
+    </div>
   );
 }
 export default UrlForm;

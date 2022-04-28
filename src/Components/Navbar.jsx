@@ -7,18 +7,119 @@ import Button from "@mui/material/Button";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import Portal from "@mui/material/Portal";
+import Modal from "./Modal";
+import { useState } from "react";
 
 export default function ButtonAppBar() {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = useState(false);
+  const [onOpen, setOnOpen] = useState(false);
   const container = React.useRef(null);
-
-  const handleClick = () => {
-    setShow(!show);
+  const onClose = () => {
+    setOnOpen(!onOpen);
   };
 
   return (
     <div className="navbar-body">
+     
+        <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
+          <p>aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            as
+            aaaaaaaaaaaaaaaaaaaaaaaaa
+            asdfasf
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            asfaggggggggg
+            as
+          </p>
+           </Modal>
+     
+      
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -34,19 +135,11 @@ export default function ButtonAppBar() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Links-Chopper
             </Typography>
-            <Button onClick={handleClick} color="inherit">
+            <Button onClick={() => setOnOpen(!onOpen)} color="inherit">
               <AccountCircleIcon fontSize="large" />
             </Button>
           </Toolbar>
         </AppBar>
-
-        {show ? (
-          <Portal container={container.current}>
-            <div className="login-portal">
-              <span>Formulario</span>
-            </div>
-          </Portal>
-        ) : null}
       </Box>
     </div>
   );

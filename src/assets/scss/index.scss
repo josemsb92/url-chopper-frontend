@@ -1,9 +1,19 @@
 $border-form: 2px solid #000000;
 
-body{
-    
+.url-form{
+    display: flex;
+    flex-direction: row;      
+    align-items: center;
+    justify-content: center;    
+    margin: 10% auto;
 }
 
-.login-portal{
-    border: $border-form
+.main-view p{
+    text-align: center;
+    margin: 5%;
 }
+
+p{
+  text-align: center;
+}
+ 
