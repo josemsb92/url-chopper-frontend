@@ -11,10 +11,7 @@ function UrlForm() {
   }
   function handleChange(event) {
     setUrlText(event.target.value);
-  }
-  function copyToClipboard(){
-    navigator.clipboard.writeText(shortUrl)
-  }
+  } 
 
   async function UrlTransform(event) {
     const response = await axios
@@ -22,18 +19,17 @@ function UrlForm() {
         OriginalUrl: urltext,
       })
       .then(
-        (res) => setShortUrl(`localhost:3000/urlchopper/${res.data.url.GeneratedUrl}`),
-        (res) => console.log(res)
+        (res) => setShortUrl(`localhost:3000/${res.data.url.GeneratedUrl}`)  
       );
   }
 
   const shortUrlRender =
-      shortUrl === "localhost:3000/urlchopper/undefined"? (
+      shortUrl === "localhost:3000/undefined"? (
       <div className="display-short-url">
         Your url is not a valid url
       </div>
     ) : shortUrl !== ""? <div className="display-short-url">
-    Your url has been chopped: <button className="clipboard-button" onClick={copyToClipboard()}>{shortUrl}<ContentCopyIcon/></button>
+    Your url has been chopped: <button className="clipboard-button" onClick={() =>  navigator.clipboard.writeText(shortUrl)}>{shortUrl}<ContentCopyIcon/></button>
   </div>: null
 
   return (

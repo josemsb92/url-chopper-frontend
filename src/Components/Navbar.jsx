@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Modal from "./Modal";
 import { useState } from "react";
+import Register from "./Register";
 
 export default function ButtonAppBar() {
   const [show, setShow] = useState(false);
@@ -22,101 +23,7 @@ export default function ButtonAppBar() {
     <div className="navbar-body">
      
         <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            as
-            aaaaaaaaaaaaaaaaaaaaaaaaa
-            asdfasf
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            asfaggggggggg
-            as
-          </p>
+          <Register />
            </Modal>
      
       
