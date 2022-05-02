@@ -35,9 +35,12 @@
       max-width: 450px;
     }
   }
+  .modal-content{
+    overflow-y: auto;
+    max-height: 70vh;
+  }
 }
 
-.modal-content{
-  overflow-y: auto;
-  max-height: 70vh;
+#navbar-bar{
+  background-color: rgb(29, 215, 110)  ;
 }
