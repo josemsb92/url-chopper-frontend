@@ -7,7 +7,7 @@ export default function Register(){
 
     return(
         <div>
-            <form>
+            <form className="register-form">
                 <input type ="text" placeholder="username"/>
                 <input type ="password" placeholder="password"/>
                 <input type ="email" placeholder="your email"/>
