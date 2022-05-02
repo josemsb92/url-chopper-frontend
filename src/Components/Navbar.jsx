@@ -16,14 +16,14 @@ export default function ButtonAppBar() {
   const [onOpen, setOnOpen] = useState(false);
   const container = React.useRef(null);
   const onClose = () => {
-    setOnOpen(!onOpen);
+    setOnOpen(false);
   };
 
   return (
     <div className="navbar-body">
      
         <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
-          <Register />
+          <Register setOnOpen={setOnOpen}/>
            </Modal>
      
       
