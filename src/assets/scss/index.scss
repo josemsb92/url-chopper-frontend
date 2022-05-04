@@ -1,5 +1,3 @@
-$border-form: 2px solid #000000;
-
 .url-form{
     display: flex;
     flex-direction: row;      
@@ -8,7 +6,7 @@ $border-form: 2px solid #000000;
     margin: 10% auto;
 }
 .main-view{
-  background-color: #dfeba3;
+  background-color: #f9f9f9;
 }
 
 .main-view p{
@@ -16,11 +14,4 @@ $border-form: 2px solid #000000;
     margin: 5%;   
 }
 
-.index-img-chopping{
-  display: block;
-  margin: auto;
-  width: 50%;
-  border: solid 5px #95d6ad;
-  border-radius: 50px;
-}
  

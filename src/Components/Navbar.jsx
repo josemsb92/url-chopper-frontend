@@ -20,34 +20,15 @@ export default function ButtonAppBar() {
   };
 
   return (
-    <div className="navbar-body">
-     
-        <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
-          <Register setOnOpen={setOnOpen}/>
-           </Modal>
-     
-      
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar id="navbar-bar" sx={{bgcolor:'#ff8a80'}}  position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Links-Chopper
-            </Typography>
-            <Button onClick={() => setOnOpen(!onOpen)} color="inherit">
-              <AccountCircleIcon fontSize="large" />
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
+    <div className="nav-body">
+      <div className="nav-title">Josemi-Chopper</div>
+      <div className="nav-login-register">
+        <button onClick={() => setOnOpen(!onOpen)}>Login</button>
+        <button onClick={() => setOnOpen(!onOpen)}>Register</button>
+      </div>
+      <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
+        <Register setOnOpen={setOnOpen} />
+      </Modal>
     </div>
   );
 }

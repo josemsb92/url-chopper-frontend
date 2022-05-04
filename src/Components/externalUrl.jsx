@@ -25,6 +25,5 @@ function ExternalUrl() {
   } else if (urlRedirect !== "") {
     window.location.replace(urlRedirect);
   }
-  console.log(urlRedirect, "RENDERURL");
 }
 export default ExternalUrl;
