@@ -50,8 +50,7 @@
 }
 .nav-title{
   color: #006cff;
-  font-size: 2rem; 
-  margin-bottom:1rem ;
+  font-size: 3rem;   
 }
 .nav-title:before{
   background-color: #c50000;
@@ -73,6 +72,7 @@
 }
 .nav-login-register{
   button{
+    margin-top: 1rem;
     margin-left: 0.6rem;
     color: #f9f9f9;
     background-color: #006cff;
