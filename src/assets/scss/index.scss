@@ -9,9 +9,17 @@
   background-color: #f9f9f9;
 }
 
-.main-view p{
-    text-align: center;
-    margin: 5%;   
+.main-section{
+  display: flex;
+  font-family: 'Rubik', sans-serif;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 2% auto;
+  width: 90%;
+  background-color: blueviolet;
 }
 
  
