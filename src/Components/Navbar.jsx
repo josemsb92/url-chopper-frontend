@@ -18,17 +18,22 @@ export default function ButtonAppBar() {
   const onClose = () => {
     setOnOpen(false);
   };
-  
+
   return (
     <>
-    <div className="nav-body">
-      <div className="nav-title">Josemi-Chopper</div>
-      <div className="nav-login-register">
-        <button onClick={() => setOnOpen(!onOpen)}>Login</button>
-        <button onClick={() => setOnOpen(!onOpen)}>Register</button>
-      </div>      
-    </div>
-    <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
+      <div className="nav-body">
+        <div className="nav-title">Josemi-Chopper</div>
+        <div className="nav-login-register">
+          <button className="primary-button" onClick={() => setOnOpen(!onOpen)}>
+            Login
+          </button>
+          <button className="primary-button" onClick={() => setOnOpen(!onOpen)}>
+            Register
+          </button>
+        </div>
+      </div>
+
+      <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
         <Register setOnOpen={setOnOpen} />
       </Modal>
     </>

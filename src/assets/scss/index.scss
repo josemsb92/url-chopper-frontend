@@ -1,27 +1,15 @@
-.main-view{
+.main-view {
   background-color: #f2f2f2;
   min-height: 100vh;
 }
 
-.main-section{
+.main-section {
   color: #676767;
   display: flex;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: center;  
+  justify-content: center;
   align-items: center;
-  margin: 2% auto;
-  width: min-content;
-  padding: 2rem;
-  height: 100%;
-  background-color: #0b1736;
-  
+  background-color: white;
 }
-
-@media(min-width: 720px){
-  .main-section{
-    width: 60%;
-  }
-}
- 

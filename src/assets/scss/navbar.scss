@@ -35,54 +35,53 @@
       max-width: 450px;
     }
   }
-  .modal-content{
+  .modal-content {
     overflow-y: auto;
     max-height: 70vh;
   }
 }
-.nav-body{
+.nav-body {
   display: flex;
+  align-items: center;
   flex-flow: row wrap;
-  align-items: center;  
+  align-items: center;
   justify-content: space-around;
-  padding: 2rem;  
-  border-bottom:   groove #0186da 1rem;  
-  font-family: 'Rubik', sans-serif;
-  gap:20px;
+  padding: 2rem;
+  border-bottom: groove #0186da 1rem;
+  font-family: "Rubik", sans-serif;
+  gap: 20px;
 }
-.nav-title{
+.nav-title {
   color: #0186da;
-  font-size: 3rem;  
+  font-size: 3rem;
   padding-right: 10px;
-  box-shadow: 1rem -0.5rem #02619c;   
+  box-shadow: 1rem -0.5rem #02619c;
 }
-@media(max-width: 580px ){
-  .nav-title{
-    width: min-content;    
+@media (max-width: 580px) {
+  .nav-title {
+    width: min-content;
   }
 }
-
-.nav-login-register{   
-  button{    
-    margin-top: 1rem;
-    margin-left: 1rem;
-    color: #f9f9f9;
-    background-color: #0186da;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem;
-    width: 6rem;
-    font-size: 1.2rem;       
-  }
-  button:hover{
-    transition-duration: 0.1s;
+.nav-login-register {
+  display: flex;
+  width: 15rem;
+  justify-content: space-around;
+}
+.primary-button {
+  color: #f9f9f9;
+  background-color: #0186da;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 6rem;
+  font-size: 1.2rem;
+}
+.primary-button:hover {
+  transition-duration: 0.1s;
   background-color: #f9f9f9;
-  color:#0186da;
+  color: #0186da;
   outline: solid 1px #0186da;
-  }   
-  button:active {
-    transform: scale(0.9);
-  }  
 }
-
-
+.primary-button:active {
+  transform: scale(0.9);
+}
