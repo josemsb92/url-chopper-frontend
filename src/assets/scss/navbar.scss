@@ -42,6 +42,7 @@
 }
 .nav-body{
   display: flex;
+  align-items: center;
   flex-flow: row wrap;
   justify-content:space-between;
   padding: 2rem;  
@@ -53,9 +54,9 @@
   font-size: 3rem;   
 }
 
-.nav-login-register{
-  button{
-    margin-top: 1rem;
+
+  .primary-button{
+    
     margin-left: 0.6rem;
     color: #f9f9f9;
     background-color: #0186da;
@@ -65,16 +66,16 @@
     width: 6rem;
     font-size: 1.2rem;       
   }
-  button:hover{
+  .primary-button:hover{
     transition-duration: 0.1s;
   background-color: #f9f9f9;
   color:#0186da;
   border: solid 1px #0186da;
   }  
  
-  button:active {
+  .primary-button:active {
     transform: scale(0.9);
   }  
-}
+
 
 

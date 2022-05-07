@@ -34,14 +34,16 @@ function UrlForm() {
 
   return (
     <div className="url-form-body">
+      <p>A simple website to chopp and prepare your links to be easy to carry them.</p>
       <form className="url-form" onSubmit={handleSubmit}>
         <input
           type="text"
           value={urltext}
+          size="60"
           className="url-text-area"
           onChange={handleChange}
         />
-        <input type="submit" value="Chopp!" onClick={UrlTransform} />
+        <button className="primary-button"> Chopp! </button>
       </form>
       {shortUrlRender}
       
