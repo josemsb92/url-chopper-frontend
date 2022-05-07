@@ -29,11 +29,12 @@ function UrlForm() {
         Your url is not a valid url
       </div>
     ) : shortUrl !== ""? <div className="display-short-url">
-    Your url has been chopped: <button className="clipboard-button" onClick={() =>  navigator.clipboard.writeText(shortUrl)}>{shortUrl}<ContentCopyIcon/></button>
+    Your short url: <button className="clipboard-button" onClick={() =>  navigator.clipboard.writeText(shortUrl)}>{shortUrl}<ContentCopyIcon/></button>
   </div>: null
 
   return (
     <div className="url-form-body">
+      <p>Paste the URL to be chopped</p>
       <form className="url-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -41,7 +42,7 @@ function UrlForm() {
           className="url-text-area"
           onChange={handleChange}
         />
-        <input type="submit" value="Chopp!" onClick={UrlTransform} />
+        <button onClick={UrlTransform}> Chopp!</button>
       </form>
       {shortUrlRender}
       

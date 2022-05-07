@@ -4,11 +4,9 @@ function MainView() {
   return (
     <div className="main-view">      
       <Navbar />
-      <div className="main-section">
-      <p>A simple website to chopp and prepare your links to be easy to carry them.</p>
+      <div className="main-section">      
       <UrlForm />    
-      </div>
-       
+      </div>       
     </div>
   );
 }

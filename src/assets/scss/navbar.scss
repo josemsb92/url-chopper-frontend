@@ -43,20 +43,29 @@
 .nav-body{
   display: flex;
   flex-flow: row wrap;
-  justify-content:space-between;
+  align-items: center;  
+  justify-content: space-around;
   padding: 2rem;  
   border-bottom:   groove #0186da 1rem;  
   font-family: 'Rubik', sans-serif;
+  gap:20px;
 }
 .nav-title{
   color: #0186da;
-  font-size: 3rem;   
+  font-size: 3rem;  
+  padding-right: 10px;
+  box-shadow: 1rem -0.5rem #02619c;   
+}
+@media(max-width: 580px ){
+  .nav-title{
+    width: min-content;    
+  }
 }
 
-.nav-login-register{
-  button{
+.nav-login-register{   
+  button{    
     margin-top: 1rem;
-    margin-left: 0.6rem;
+    margin-left: 1rem;
     color: #f9f9f9;
     background-color: #0186da;
     border: none;
@@ -69,9 +78,8 @@
     transition-duration: 0.1s;
   background-color: #f9f9f9;
   color:#0186da;
-  border: solid 1px #0186da;
-  }  
- 
+  outline: solid 1px #0186da;
+  }   
   button:active {
     transform: scale(0.9);
   }  
