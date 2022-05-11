@@ -10,13 +10,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Modal from "./Modal";
 import { useState } from "react";
 import Register from "./Register";
-
+import Login from "./Login";
 export default function ButtonAppBar() {
   const [show, setShow] = useState(false);
-  const [onOpen, setOnOpen] = useState(false);
+  const [onOpenLogin, setOnOpenLogin] = useState(false);
+  const [onOpenRegister, setOnOpenRegister] = useState(false);
   const container = React.useRef(null);
-  const onClose = () => {
-    setOnOpen(false);
+  const onCloseLogin = () => {
+    setOnOpenLogin(false);
+  };
+  const onCloseRegister = () => {
+    setOnOpenRegister(false);
   };
 
   return (
@@ -24,17 +28,34 @@ export default function ButtonAppBar() {
       <div className="nav-body">
         <div className="nav-title">Josemi-Chopper</div>
         <div className="nav-login-register">
-          <button className="primary-button" onClick={() => setOnOpen(!onOpen)}>
+          <button
+            className="primary-button"
+            onClick={() => setOnOpenLogin(!onOpenLogin)}
+          >
             Login
           </button>
-          <button className="primary-button" onClick={() => setOnOpen(!onOpen)}>
+          <button
+            className="primary-button"
+            onClick={() => setOnOpenRegister(!onOpenRegister)}
+          >
             Register
           </button>
         </div>
       </div>
 
-      <Modal onOpen={onOpen} setOnOpen={setOnOpen} onClose={onClose}>
-        <Register setOnOpen={setOnOpen} />
+      <Modal
+        onOpen={onOpenRegister}
+        setOnOpen={onOpenRegister}
+        onClose={onCloseRegister}
+      >
+        <Register setOnOpen={setOnOpenRegister} />
+      </Modal>
+      <Modal
+        onOpen={onOpenLogin}
+        setOnOpen={onOpenLogin}
+        onClose={onCloseLogin}
+      >
+        <Login setOnOpen={setOnOpenLogin} />
       </Modal>
     </>
   );
