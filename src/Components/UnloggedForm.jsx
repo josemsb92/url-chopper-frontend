@@ -1,6 +1,6 @@
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
-export default function RenderShortUrl({ shortUrl }) {
+export default function UnloggedForm({ shortUrl }) {
   const render =
     shortUrl === "localhost:3000/undefined" ? (
       <div className="display-short-url">Your url is not a valid url</div>

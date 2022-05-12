@@ -4,12 +4,12 @@ import loginService from "../services/login";
 export default function Login({ setOnOpen }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-
   async function handleLogin(e) {
     e.preventDefault();
-    const user = await loginService
-      .login({ email, password })
-      .then((res) => console.log(res));
+    const user = await loginService.login({ email, password });
+
+    window.sessionStorage.setItem("loggedUrlShorterUser", JSON.stringify(user));
+
     setOnOpen(false);
     setPassword("");
     setEmail("");

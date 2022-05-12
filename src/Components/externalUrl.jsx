@@ -20,7 +20,6 @@ function ExternalUrl() {
 
   if (!urlRedirect.startsWith("http") && urlRedirect !== "") {
     window.location.replace(`//${urlRedirect}`);
-    console.log(urlRedirect, "renderIF");
   } else if (urlRedirect !== "") {
     window.location.replace(urlRedirect);
   }

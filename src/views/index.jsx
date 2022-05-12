@@ -1,12 +1,12 @@
 import UrlForm from "../Components/UrlForm";
-import Navbar from "../Components/Navbar"
+import Navbar from "../Components/Navbar";
 function MainView() {
   return (
-    <div className="main-view">      
+    <div className="main-view">
       <Navbar />
-      <div className="main-section">      
-      <UrlForm />    
-      </div>       
+      <div className="main-section">
+        <UrlForm />
+      </div>
     </div>
   );
 }
