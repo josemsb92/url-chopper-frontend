@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-
+import RenderShortUrl from "./RenderShortUrl";
 function UrlForm() {
   const [urltext, setUrlText] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -24,22 +23,6 @@ function UrlForm() {
       );
   }
 
-  const shortUrlRender =
-    shortUrl === "localhost:3000/undefined" ? (
-      <div className="display-short-url">Your url is not a valid url</div>
-    ) : shortUrl !== "" ? (
-      <div className="display-short-url">
-        Your short url:{" "}
-        <button
-          className="clipboard-button"
-          onClick={() => navigator.clipboard.writeText(shortUrl)}
-        >
-          {shortUrl}
-          <ContentCopyIcon />
-        </button>
-      </div>
-    ) : null;
-
   return (
     <div className="url-form-body">
       <p className="url-input-description">
@@ -59,8 +42,7 @@ function UrlForm() {
           Service, Privacy Policy, and Acceptable Use Policy
         </p>
       </form>
-
-      {shortUrlRender}
+      <RenderShortUrl shortUrl={shortUrl} />
     </div>
   );
 }
