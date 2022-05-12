@@ -43,18 +43,10 @@ export default function ButtonAppBar() {
         </div>
       </div>
 
-      <Modal
-        onOpen={onOpenRegister}
-        setOnOpen={onOpenRegister}
-        onClose={onCloseRegister}
-      >
+      <Modal onOpen={onOpenRegister} onClose={onCloseRegister}>
         <Register setOnOpen={setOnOpenRegister} />
       </Modal>
-      <Modal
-        onOpen={onOpenLogin}
-        setOnOpen={onOpenLogin}
-        onClose={onCloseLogin}
-      >
+      <Modal onOpen={onOpenLogin} onClose={onCloseLogin}>
         <Login setOnOpen={setOnOpenLogin} />
       </Modal>
     </>
