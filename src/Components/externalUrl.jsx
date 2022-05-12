@@ -11,7 +11,6 @@ function ExternalUrl() {
       await axios
         .get(`http://localhost:3003/urlchopper/url/${shortUrl[1]}`)
         .then((response) => {
-          console.log("hace el get");
           const data = [...response.data];
           setUrlRedirect(data[0].OriginalUrl);
         });
