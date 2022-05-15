@@ -1,31 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import getUrlService from "../services/getUrlsById";
 import UnloggedForm from "./UnloggedForm";
 import LoggedForm from "./LoggedForm";
+import { userContext } from "../App";
 function UrlForm() {
   const [urltext, setUrlText] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const [urls, setUrl] = useState("");
-  const [user, setUser] = useState("");
-  useEffect(() => {
-    const loggedUserJSON = window.sessionStorage.getItem(
-      "loggedUrlShorterUser"
-    );
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      setUser(user);
-    }
-  }, []);
+  const [urls, setUrl] = useState([]);
+  const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
-    async function handleUrls() {
-      const urls = await getUrlService.getUrlsById(user.id);
-      setUrl(urls);
-    }
     handleUrls();
-    console.log(urls);
-  }, [shortUrl]);
+  }, [user]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -34,6 +21,13 @@ function UrlForm() {
   }
   function handleChange(event) {
     setUrlText(event.target.value);
+  }
+  async function handleUrls() {
+    if (user !== null) {
+      const urls = await getUrlService.getUrlsById(user.id);
+      setUrl(urls);
+      console.log(urls);
+    }
   }
 
   async function UrlTransform() {
@@ -58,7 +52,7 @@ function UrlForm() {
   }
 
   const renderUrls = window.sessionStorage.getItem("loggedUrlShorterUser") ? (
-    <LoggedForm shortUrl={shortUrl} />
+    <LoggedForm urls={urls} />
   ) : (
     <UnloggedForm shortUrl={shortUrl} />
   );
