@@ -9,8 +9,6 @@ function UrlForm() {
   const [shortUrl, setShortUrl] = useState("");
   const [urls, setUrl] = useState([]);
   const { user, setUser } = useContext(userContext);
-  console.log(urls);
-  console.log(user);
   useEffect(() => {
     handleUrls();
   }, [user, shortUrl]);
