@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import MainView from "./views/index";
 import ExternalUrl from "./Components/externalUrl";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { handleLogin } from "./Components/Login";
 const userContext = React.createContext({
   user: "EL USER",
   setUser: () => {},
@@ -10,6 +11,13 @@ const userContext = React.createContext({
 export { userContext };
 function App() {
   const [user, setUser] = useState(null);
+  if (JSON.parse(window.sessionStorage.getItem("loggedUrlShorterUser"))) {
+    if (!user) {
+      setUser(
+        JSON.parse(window.sessionStorage.getItem("loggedUrlShorterUser"))
+      );
+    }
+  }
   return (
     <div className="App">
       <userContext.Provider value={{ user, setUser }}>

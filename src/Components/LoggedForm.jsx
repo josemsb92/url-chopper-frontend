@@ -1,8 +1,10 @@
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useEffect, useState } from "react";
 
-export default function LoggedForm({ shortUrl }) {
+export default function LoggedForm({ urls }) {
   const [user, setUser] = useState("");
+  const [render, setRender] = useState("");
+
   useEffect(() => {
     const loggedUserJSON = window.sessionStorage.getItem(
       "loggedUrlShorterUser"
@@ -12,20 +14,44 @@ export default function LoggedForm({ shortUrl }) {
       setUser(user);
     }
   }, []);
+  // if (urls.length > 0) {
+  //   urls.map((url) => {
+  //     <div className="display-short-url">
+  //       <button
+  //         className="clipboard-button"
+  //         onClick={() =>
+  //           navigator.clipboard.writeText(`localhost:3000/${url.GeneratedUrl}`)
+  //         }
+  //       >
+  //         {url.GeneratedUrl}
+  //         <ContentCopyIcon />
+  //       </button>
+  //     </div>;
+  //   });
 
-  const render =
-    shortUrl === "localhost:3000/undefined" ? (
-      <div className="display-short-url">Your url is not a valid url</div>
-    ) : shortUrl !== "" ? (
-      <div className="display-short-url">
-        <button
-          className="clipboard-button"
-          onClick={() => navigator.clipboard.writeText(shortUrl)}
-        >
-          {shortUrl}
-          <ContentCopyIcon />
-        </button>
-      </div>
-    ) : null;
-  return render;
+  // }
+
+  return (
+    <>
+      {urls.length > 0 &&
+        urls.map((url) => (
+          <div key={url.id} className="display-short-url">
+            <p>Your short url for {url.OriginalUrl}: </p>
+            <button
+              className="clipboard-button"
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  `localhost:3000/${url.GeneratedUrl}`
+                )
+              }
+            >
+              {`localhost:3000/${url.GeneratedUrl}`}
+              <div className="aaa">
+                <ContentCopyIcon />
+              </div>
+            </button>
+          </div>
+        ))}
+    </>
+  );
 }

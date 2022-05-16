@@ -10,7 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Modal from "./Modal";
 import { useState } from "react";
 import Register from "./Register";
-import Login from "./Login";
+import { Login } from "./Login";
 export default function ButtonAppBar() {
   const [show, setShow] = useState(false);
   const [onOpenLogin, setOnOpenLogin] = useState(false);

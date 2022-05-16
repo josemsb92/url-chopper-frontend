@@ -9,11 +9,18 @@ function UrlForm() {
   const [shortUrl, setShortUrl] = useState("");
   const [urls, setUrl] = useState([]);
   const { user, setUser } = useContext(userContext);
-
+  console.log(urls);
+  console.log(user);
   useEffect(() => {
     handleUrls();
-  }, [user]);
+  }, [user, shortUrl]);
 
+  async function handleUrls() {
+    if (user) {
+      const urls = await getUrlService.getUrlsById(user.id);
+      setUrl(urls);
+    }
+  }
   function handleSubmit(event) {
     event.preventDefault();
     UrlTransform();
@@ -22,16 +29,9 @@ function UrlForm() {
   function handleChange(event) {
     setUrlText(event.target.value);
   }
-  async function handleUrls() {
-    if (user !== null) {
-      const urls = await getUrlService.getUrlsById(user.id);
-      setUrl(urls);
-      console.log(urls);
-    }
-  }
 
   async function UrlTransform() {
-    if (user !== "") {
+    if (user) {
       const response = await axios
         .post("http://localhost:3003/urlchopper/url/", {
           OriginalUrl: urltext,
@@ -50,7 +50,7 @@ function UrlForm() {
         );
     }
   }
-
+  //Need to be changed to user !== ""
   const renderUrls = window.sessionStorage.getItem("loggedUrlShorterUser") ? (
     <LoggedForm urls={urls} />
   ) : (
