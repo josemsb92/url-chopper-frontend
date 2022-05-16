@@ -1,10 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import loginService from "../services/login";
 import { userContext } from "../App";
+import { useNavigate } from "react-router-dom";
 export function Login({ setOnOpen }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const { user, setUser } = useContext(userContext);
+  let navigate = useNavigate();
+
   async function handleLogin(e) {
     e.preventDefault();
     const user = await loginService.login({ email, password });
@@ -13,6 +16,7 @@ export function Login({ setOnOpen }) {
     setPassword("");
     setEmail("");
     setUser(JSON.parse(window.sessionStorage.getItem("loggedUrlShorterUser")));
+    navigate(`/user/${user.email}`);
   }
 
   return (

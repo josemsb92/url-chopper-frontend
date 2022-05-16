@@ -6,10 +6,13 @@
   color: #e8e8e8;
   background-color: #0b1736;
   width: 100%;
-  margin-top: 50px;
-  padding: 20px 0;
+  // margin-top: 50px;
+  // padding: 20px 0;
+
   .display-short-url {
     width: 30rem;
+    padding-bottom: 1rem;
+
     p {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -18,13 +21,32 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
+      font-family: "Rubik", sans-serif;
       margin: 2px;
       border: none;
       width: 20rem;
     }
     button:hover {
-      outline: 5px solid red;
+      transition-duration: 0.1s;
+      background-color: #f9f9f9;
+      color: #0186da;
+      outline: solid 5px #0186da;
+    }
+    button:active {
+      transform: scale(0.9);
+    }
+  }
+  @media (max-width: 660px) {
+    .display-short-url {
+      width: 20rem;
+    }
+  }
+  .short-url-delete {
+    button:hover {
+      transition-duration: 0.1s;
+      background-color: #f9f9f9;
+      color: #da0101;
+      outline: solid 5px #da0101;
     }
   }
 }

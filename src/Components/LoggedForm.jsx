@@ -1,10 +1,11 @@
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useEffect, useState } from "react";
-
+import deleteUrlService from "../services/deleteUrl";
+import Alert from "@mui/material/Alert";
+import axios from "axios";
 export default function LoggedForm({ urls }) {
   const [user, setUser] = useState("");
-  const [render, setRender] = useState("");
-
+  const [alert, setAlert] = useState(true);
   useEffect(() => {
     const loggedUserJSON = window.sessionStorage.getItem(
       "loggedUrlShorterUser"
@@ -14,25 +15,24 @@ export default function LoggedForm({ urls }) {
       setUser(user);
     }
   }, []);
-  // if (urls.length > 0) {
-  //   urls.map((url) => {
-  //     <div className="display-short-url">
-  //       <button
-  //         className="clipboard-button"
-  //         onClick={() =>
-  //           navigator.clipboard.writeText(`localhost:3000/${url.GeneratedUrl}`)
-  //         }
-  //       >
-  //         {url.GeneratedUrl}
-  //         <ContentCopyIcon />
-  //       </button>
-  //     </div>;
-  //   });
 
-  // }
-
+  async function handleDelete(url) {
+    if (window.confirm("Are you sure you want to delete this url?")) {
+      deleteUrlService.deleteUrl(url.id);
+    }
+  }
   return (
     <>
+      {alert && (
+        <Alert
+          onClose={() => {
+            setAlert(false);
+          }}
+        >
+          Welcome {user.email}
+        </Alert>
+      )}
+
       {urls.length > 0 &&
         urls.map((url) => (
           <div key={url.id} className="display-short-url">
@@ -46,10 +46,11 @@ export default function LoggedForm({ urls }) {
               }
             >
               {`localhost:3000/${url.GeneratedUrl}`}
-              <div className="aaa">
-                <ContentCopyIcon />
-              </div>
+              <ContentCopyIcon />
             </button>
+            <div className="short-url-delete">
+              <button onClick={() => handleDelete(url)}>Delete</button>
+            </div>
           </div>
         ))}
     </>

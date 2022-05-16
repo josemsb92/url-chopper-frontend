@@ -24,6 +24,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainView />} />
+            <Route path="/user/:userName" element={<MainView />} />
             <Route path="/:generatedUrl" element={<ExternalUrl />} />
           </Routes>
         </BrowserRouter>

@@ -1,6 +1,12 @@
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 export default function UnloggedForm({ shortUrl }) {
+  const advice = (
+    <p>
+      Do you have an account? Loging with us and you will be able to see and
+      manage all your urls.
+    </p>
+  );
   const render =
     shortUrl === "localhost:3000/undefined" ? (
       <div className="display-short-url">Your url is not a valid url</div>
@@ -16,5 +22,10 @@ export default function UnloggedForm({ shortUrl }) {
         </button>
       </div>
     ) : null;
-  return render;
+
+  return (
+    <>
+      {advice} {render}
+    </>
+  );
 }
